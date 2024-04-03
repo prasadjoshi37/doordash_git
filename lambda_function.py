@@ -16,13 +16,9 @@ def lambda_handler(event, context):
         
         data = obj['Body'].read().decode("utf-8")
         
-        # Convert dictionary to JSON string
-        # json_string = json.dumps(data.decode("utf-8"))
-        
-        # # Convert JSON string to Pandas DataFrame
         df = pd.read_json(data)
             
-        # print(df)
+        
         
         filtered_df = df[df['status'] == 'delivered']
         fjson = filtered_df.to_json(orient = 'records')

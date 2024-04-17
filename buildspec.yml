@@ -8,7 +8,7 @@ phases:
       - pip install -r requirement.txt -t lib
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase
+      - echo "Nothing to do in the pre_build phase"
   build:
     commands:
       - echo " new Zipping deployment package..."
